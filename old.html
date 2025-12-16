@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lukundo Uniforms Kenya | Quality School Uniforms, Embroidery & Curtains</title>
+  <link rel="icon" href="lukundo-logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Tailwind Configuration for Brand Colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lukundo-blue': '#1e3a8a',
+            'lukundo-blue-light': '#3b82f6',
+            'lukundo-gold': '#d97706',
+            'lukundo-gold-light': '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Lukundo Uniforms Kenya - Premium quality school uniforms, custom embroidery, and tailored curtains. Serving schools and institutions nationwide." />
+  <meta name="keywords"
+    content="school uniforms Kenya, embroidery services Nairobi, custom uniforms Kenya, school sweaters, curtains Nairobi, uniform suppliers Kenya" />
+  <meta name="author" content="Lukundo Uniforms Kenya" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="en" />
+
+  <meta property="og:title" content="Lukundo Uniforms Kenya | Quality School Uniforms & Embroidery" />
+  <meta property="og:description"
+    content="Kenya's premier provider of school uniforms, embroidery services, and custom curtains for institutions." />
+  <meta property="og:image" content="https://lukundouniforms.com/images/og-image.jpg" />
+  <meta property="og:url" content="https://lukundouniforms.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lukundo Uniforms Kenya" />
+  <meta name="twitter:description" content="Premium School Uniforms & Embroidery Services" />
+  <meta name="twitter:image" content="https://lukundouniforms.com/images/twitter-card.jpg" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lukundouniforms.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Lukundo Uniforms Kenya",
+    "url": "https://lukundouniforms.com",
+    "logo": "https://lukundouniforms.com/lukundo-logo.png",
+    "sameAs": [
+      "https://www.facebook.com/lukundouniforms",
+      "https://www.instagram.com/lukundouniforms",
+      "https://www.linkedin.com/company/lukundouniforms"
+    ],
+    "description": "Lukundo Uniforms Kenya is a leading uniform supplier providing quality school uniforms, embroidery services, and custom curtains across Kenya."
+  }
+  </script>
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS for Navbar Enhancements -->
+  <style>
+    /* Smooth transitions for navbar */
+    .navbar {
+      transition: all 0.3s ease;
+    }
+    
+    /* Mobile menu animation */
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .mobile-menu {
+      animation: slideDown 0.3s ease forwards;
+    }
+    
+    /* Underline animation for nav links */
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #d97706;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .nav-link.active:after {
+      width: 100%;
+    }
+    
+    /* Sticky navbar effect */
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Custom pattern for hero section */
+    .pattern-bg {
+      background-color: #1e3a8a;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans pt-16 md:pt-0">
+
+  <!-- Enhanced Navbar -->
+  <nav id="navbar" class="navbar bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo/Brand -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="/" class="flex items-center gap-3">
+            <img src="lukundo-logo.png" alt="Lukundo Uniforms Logo" class="h-10 w-10 md:h-12 md:w-12 rounded-full shadow-md border-2 border-lukundo-blue p-1 bg-white">
+            <span class="text-xl md:text-2xl font-bold text-lukundo-blue">Lukundo Uniforms</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a href="#" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-lukundo-blue hover:text-lukundo-gold active">Home</a>
+          <a href="#uniforms" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-lukundo-blue hover:text-lukundo-gold">Uniforms</a>
+          <a href="#embroidery" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-lukundo-blue hover:text-lukundo-gold">Embroidery</a>
+          <a href="#curtains" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-lukundo-blue hover:text-lukundo-gold">Curtains</a>
+          <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-lukundo-blue hover:text-lukundo-gold">Contact</a>
+          <a href="tel:0722123456" class="ml-4 px-4 py-2 bg-lukundo-gold text-white rounded-md hover:bg-lukundo-gold-light transition flex items-center gap-2">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call Us</span>
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-lukundo-blue hover:text-lukundo-gold focus:outline-none">
+            <span class="sr-only">Open main menu</span>
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white border-t border-gray-200">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-lukundo-blue bg-gray-50">Home</a>
+        <a href="#uniforms" class="block px-3 py-2 rounded-md text-base font-medium text-lukundo-blue hover:bg-gray-50">Uniforms</a>
+        <a href="#embroidery" class="block px-3 py-2 rounded-md text-base font-medium text-lukundo-blue hover:bg-gray-50">Embroidery</a>
+        <a href="#curtains" class="block px-3 py-2 rounded-md text-base font-medium text-lukundo-blue hover:bg-gray-50">Curtains</a>
+        <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-lukundo-blue hover:bg-gray-50">Contact</a>
+        <a href="tel:0722123456" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-lukundo-gold hover:bg-lukundo-gold-light text-center">
+          <i class="fas fa-phone-alt mr-2"></i>Call Now
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Pattern Background -->
+  <header class="pattern-bg text-white p-10">
+    <div class="max-w-7xl mx-auto relative">
+      <h1 class="text-4xl font-bold mb-4">Premium School Uniforms & Custom Embroidery</h1>
+      <p class="text-lg mb-6">Quality uniforms, precise embroidery, and elegant curtains for schools and institutions across Kenya</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contact" class="px-6 py-3 bg-lukundo-gold text-white rounded-md hover:bg-lukundo-gold-light transition font-medium">
+          Order Now <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+        <a href="#uniforms" class="px-6 py-3 bg-white text-lukundo-blue rounded-md hover:bg-gray-100 transition font-medium">
+          View Products
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Uniforms Section -->
+  <section id="uniforms" class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-2 text-lukundo-blue">School Uniform Collection</h2>
+      <p class="text-center text-gray-600 mb-10">High-quality uniforms tailored to your school's specifications</p>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Uniform 1 -->
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition group">
+          <img src="school-uniform-1.jpg" alt="School Uniform" class="rounded-lg mb-4 h-48 w-full object-cover">
+          <h3 class="text-xl font-bold mb-2 text-lukundo-blue group-hover:text-lukundo-gold transition">Complete Sets</h3>
+          <p class="text-gray-600">Full school uniform packages including shirts, skirts/trousers, sweaters, and ties</p>
+          <div class="mt-4 text-lukundo-gold font-medium">
+            From KES 2,500
+          </div>
+        </div>
+        
+        <!-- Uniform 2 -->
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition group">
+          <img src="school-sweater.jpg" alt="School Sweater" class="rounded-lg mb-4 h-48 w-full object-cover">
+          <h3 class="text-xl font-bold mb-2 text-lukundo-blue group-hover:text-lukundo-gold transition">School Sweaters</h3>
+          <p class="text-gray-600">Warm, durable sweaters with your school colors and logo</p>
+          <div class="mt-4 text-lukundo-gold font-medium">
+            From KES 1,800
+          </div>
+        </div>
+        
+        <!-- Uniform 3 -->
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition group">
+          <img src="sports-uniform.jpg" alt="Sports Uniform" class="rounded-lg mb-4 h-48 w-full object-cover">
+          <h3 class="text-xl font-bold mb-2 text-lukundo-blue group-hover:text-lukundo-gold transition">Sports Kits</h3>
+          <p class="text-gray-600">Custom sports uniforms for football, basketball, athletics and more</p>
+          <div class="mt-4 text-lukundo-gold font-medium">
+            From KES 3,200
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Embroidery Section -->
+  <section id="embroidery" class="py-14 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="md:flex items-center gap-10">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <img src="embroidery-machine.jpg" alt="Embroidery Machine" class="rounded-lg shadow-md w-full">
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold mb-4 text-lukundo-blue">Precision Embroidery Services</h2>
+          <p class="text-lg mb-6 text-gray-700">Professional embroidery for schools, organizations, and corporate clients:</p>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start">
+              <i class="fas fa-check text-lukundo-gold mt-1 mr-2"></i>
+              <span>School logos and crests</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-lukundo-gold mt-1 mr-2"></i>
+              <span>Names and numbers on uniforms</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-lukundo-gold mt-1 mr-2"></i>
+              <span>Corporate branding on apparel</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-lukundo-gold mt-1 mr-2"></i>
+              <span>Custom designs and patterns</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-lukundo-gold mt-1 mr-2"></i>
+              <span>Bulk orders for institutions</span>
+            </li>
+          </ul>
+          
+          <a href="#contact" class="px-6 py-3 bg-lukundo-gold text-white rounded-md hover:bg-lukundo-gold-light transition font-medium inline-block">
+            Request Quote <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curtains Section -->
+  <section id="curtains" class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-2 text-lukundo-blue">Custom Curtains & Drapery</h2>
+      <p class="text-center text-gray-600 mb-10">Elegant window treatments for schools, offices, and homes</p>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Curtain 1 -->
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition group">
+          <img src="school-curtains.jpg" alt="School Curtains" class="rounded-lg mb-4 h-48 w-full object-cover">
+          <h3 class="text-xl font-bold mb-2 text-lukundo-blue group-hover:text-lukundo-gold transition">Institutional Curtains</h3>
+          <p class="text-gray-600">Durable curtains for classrooms, halls, and offices with school colors</p>
+          <div class="mt-4 text-lukundo-gold font-medium">
+            From KES 4,500 per pair
+          </div>
+        </div>
+        
+        <!-- Curtain 2 -->
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition group">
+          <img src="blackout-curtains.jpg" alt="Blackout Curtains" class="rounded-lg mb-4 h-48 w-full object-cover">
+          <h3 class="text-xl font-bold mb-2 text-lukundo-blue group-hover:text-lukundo-gold transition">Blackout Curtains</h3>
+          <p class="text-gray-600">Light-blocking curtains for dormitories, media rooms, and bedrooms</p>
+          <div class="mt-4 text-lukundo-gold font-medium">
+            From KES 6,000 per pair
+          </div>
+        </div>
+        
+        <!-- Curtain 3 -->
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition group">
+          <img src="custom-curtains.jpg" alt="Custom Curtains" class="rounded-lg mb-4 h-48 w-full object-cover">
+          <h3 class="text-xl font-bold mb-2 text-lukundo-blue group-hover:text-lukundo-gold transition">Custom Designs</h3>
+          <p class="text-gray-600">Tailored curtains with your preferred fabrics, patterns, and embroidery</p>
+          <div class="mt-4 text-lukundo-gold font-medium">
+            Price on request
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-14 bg-lukundo-blue text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-10">What Our Clients Say</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="text-lukundo-blue text-2xl mr-3">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="italic">"Lukundo Uniforms has been our trusted supplier for 5 years. Their uniforms are durable and their embroidery is precise."</p>
+          </div>
+          <div class="flex items-center">
+            <img src="client-school.jpg" alt="Client" class="h-10 w-10 rounded-full mr-3">
+            <div>
+              <h4 class="font-bold">Mrs. Wanjiku</h4>
+              <p class="text-sm text-gray-600">School Principal, Nairobi</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="text-lukundo-blue text-2xl mr-3">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="italic">"The curtains they made for our school hall transformed the space. Professional service from start to finish."</p>
+          </div>
+          <div class="flex items-center">
+            <img src="client-admin.jpg" alt="Client" class="h-10 w-10 rounded-full mr-3">
+            <div>
+              <h4 class="font-bold">Mr. Otieno</h4>
+              <p class="text-sm text-gray-600">Administrator, Mombasa</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="text-lukundo-blue text-2xl mr-3">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="italic">"We order hundreds of sports kits annually. Lukundo always delivers on time with consistent quality."</p>
+          </div>
+          <div class="flex items-center">
+            <img src="client-sports.jpg" alt="Client" class="h-10 w-10 rounded-full mr-3">
+            <div>
+              <h4 class="font-bold">Coach Kamau</h4>
+              <p class="text-sm text-gray-600">Sports Director, Nakuru</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-2 text-lukundo-blue">Contact Lukundo Uniforms</h2>
+      <p class="text-center text-gray-600 mb-10">Get in touch for uniform orders, embroidery, or curtain inquiries</p>
+      
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-lukundo-blue">Our Contacts</h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="text-lukundo-gold text-xl mr-3 mt-1">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Showroom</h4>
+                <p class="text-gray-600">Uniform Plaza, 2nd Floor<br>Nairobi CBD, Kenya</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="text-lukundo-gold text-xl mr-3 mt-1">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Phone</h4>
+                <p class="text-gray-600">
+                  <a href="tel:0722123456" class="hover:text-lukundo-gold transition">0722 123 456</a><br>
+                  <a href="tel:0733123456" class="hover:text-lukundo-gold transition">0733 123 456</a>
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="text-lukundo-gold text-xl mr-3 mt-1">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Email</h4>
+                <p class="text-gray-600">
+                  <a href="mailto:info@lukundouniforms.com" class="hover:text-lukundo-gold transition">info@lukundouniforms.com</a><br>
+                  <a href="mailto:sales@lukundouniforms.com" class="hover:text-lukundo-gold transition">sales@lukundouniforms.com</a>
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="text-lukundo-gold text-xl mr-3 mt-1">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Working Hours</h4>
+                <p class="text-gray-600">Monday - Friday: 8:30 AM - 5:30 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-lukundo-blue">Send Us a Message</h3>
+          <form class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+              <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-lukundo-gold focus:border-lukundo-gold">
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+              <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-lukundo-gold focus:border-lukundo-gold">
+            </div>
+            
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-lukundo-gold focus:border-lukundo-gold">
+            </div>
+            
+            <div>
+              <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Needed</label>
+              <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-lukundo-gold focus:border-lukundo-gold">
+                <option value="">Select service</option>
+                <option value="uniforms">School Uniforms</option>
+                <option value="embroidery">Embroidery Services</option>
+                <option value="curtains">Custom Curtains</option>
+                <option value="other">Other Inquiry</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+              <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-lukundo-gold focus:border-lukundo-gold"></textarea>
+            </div>
+            
+            <button type="submit" class="px-6 py-3 bg-lukundo-gold text-white rounded-md hover:bg-lukundo-gold-light transition font-medium w-full">
+              Send Message <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-lukundo-blue text-white p-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-lg font-bold mb-4">Lukundo Uniforms</h3>
+          <p class="text-sm">Leading provider of quality school uniforms, embroidery services, and custom curtains in Kenya since 2010.</p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm hover:text-lukundo-gold-light transition">Home</a></li>
+            <li><a href="#uniforms" class="text-sm hover:text-lukundo-gold-light transition">Uniforms</a></li>
+            <li><a href="#embroidery" class="text-sm hover:text-lukundo-gold-light transition">Embroidery</a></li>
+            <li><a href="#curtains" class="text-sm hover:text-lukundo-gold-light transition">Curtains</a></li>
+            <li><a href="#contact" class="text-sm hover:text-lukundo-gold-light transition">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm hover:text-lukundo-gold-light transition">School Uniforms</a></li>
+            <li><a href="#" class="text-sm hover:text-lukundo-gold-light transition">Embroidery</a></li>
+            <li><a href="#" class="text-sm hover:text-lukundo-gold-light transition">Custom Curtains</a></li>
+            <li><a href="#" class="text-sm hover:text-lukundo-gold-light transition">Bulk Orders</a></li>
+            <li><a href="#" class="text-sm hover:text-lukundo-gold-light transition">Design Consultation</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+          <p class="text-sm mb-3">Subscribe for updates and promotions</p>
+          <form class="flex">
+            <input type="email" placeholder="Your email" class="px-3 py-2 text-gray-800 rounded-l-md w-full text-sm">
+            <button type="submit" class="bg-lukundo-gold hover:bg-lukundo-gold-light px-3 py-2 rounded-r-md text-sm">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+          <div class="flex space-x-4 mt-4 text-xl">
+            <a href="#" class="hover:text-lukundo-gold-light transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-lukundo-gold-light transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-lukundo-gold-light transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-lukundo-gold-light transition"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-lukundo-blue-light pt-6 text-center text-sm">
+        <p>&copy; 2025 Lukundo Uniforms Kenya. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 bg-lukundo-gold text-white p-3 rounded-full shadow-lg hidden hover:bg-lukundo-gold-light transition">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript for Enhanced Functionality -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Sticky Navbar with Scroll Effect
+    const navbar = document.getElementById('navbar');
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Show/hide back to top button
+      const backToTop = document.getElementById('back-to-top');
+      if (scrollTop > 300) {
+        backToTop.classList.remove('hidden');
+      } else {
+        backToTop.classList.add('hidden');
+      }
+      
+      // Navbar scroll behavior
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        if (scrollTop > 100) {
+          navbar.classList.add('shadow-lg');
+          navbar.classList.remove('shadow-md');
+        }
+      } else {
+        // Scrolling up
+        if (scrollTop > 100) {
+          navbar.classList.add('shadow-lg');
+          navbar.classList.remove('shadow-md');
+        }
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Back to top button
+    document.getElementById('back-to-top').addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Set active nav link based on scroll position
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (pageYOffset >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  <!-- Your existing scripts (Tawk.to, WhatsApp, GTM) -->
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/67adef74825083258e149cdc/1ijvmunvo';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+  <script type="text/javascript">
+    (function () {
+      var options = {
+        whatsapp: "254722123456", // Replace with Lukundo WhatsApp number
+        call_to_action: "Chat about uniforms", 
+        position: "left",
+      };
+      var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-s
