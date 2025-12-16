@@ -3,722 +3,1039 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lukundo Uniforms | Premium School Uniforms & Curtains</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons -->
+    <title>NairobiMarket - Kenyan Online Marketplace</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1e40af;
-            --secondary: #0f766e;
-            --accent: #dc2626;
+            --primary-green: #2E7D32;
+            --light-green: #4CAF50;
+            --accent-orange: #FF9800;
+            --dark-brown: #5D4037;
+            --light-brown: #8D6E63;
+            --background: #FFF9F0;
+            --card-bg: #FFFFFF;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+        
         body {
-            font-family: 'Roboto', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
-        h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .school-card {
-            transition: all 0.3s ease;
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .school-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
         }
-        .nav-link {
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-orange);
+        }
+        
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 30px;
             position: relative;
         }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
+        
+        .search-bar input {
             width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #E0E0E0;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: all 0.3s;
         }
-        .active-school {
-            border-color: var(--primary) !important;
-            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+        
+        .search-bar i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--light-green);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--light-green);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        
+        .btn-account {
+            background-color: var(--accent-orange);
+            color: white;
+        }
+        
+        .btn-account:hover {
+            background-color: #F57C00;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 30px 0;
+        }
+        
+        .page-title {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--dark-brown);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Product Grid */
+        .products-section {
+            margin-bottom: 50px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .product-image {
+            height: 180px;
+            width: 100%;
+            background-color: #F5F5F5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark-brown);
+        }
+        
+        .product-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+        
+        .seller-rating {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .seller-name {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .stars {
+            color: #FFC107;
+        }
+        
+        .rating-value {
+            font-weight: 600;
+        }
+        
+        .category-tag {
+            display: inline-block;
+            padding: 5px 12px;
+            background-color: #E8F5E9;
+            color: var(--primary-green);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* Locations Section */
+        .locations-section {
+            margin-bottom: 50px;
+        }
+        
+        .locations-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--dark-brown);
+        }
+        
+        .locations-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .location-tag {
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            font-weight: 600;
+            color: var(--dark-brown);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .location-tag:hover {
+            background-color: var(--primary-green);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .location-tag i {
+            color: var(--accent-orange);
+        }
+        
+        .location-tag:hover i {
+            color: white;
+        }
+        
+        /* Account & Product Forms */
+        .forms-container {
+            display: none;
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+        
+        .form-title {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: var(--dark-brown);
+            padding-bottom: 15px;
+            border-bottom: 2px solid #F0F0F0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .form-buttons .btn {
+            padding: 12px 25px;
+        }
+        
+        .form-section {
+            display: none;
+        }
+        
+        .form-section.active {
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-brown);
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #FFE0B2;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #E0E0E0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-orange);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #BDBDBD;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                width: 100%;
+                max-width: 100%;
+                margin: 10px 0;
+            }
+            
+            .nav-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+        
+        /* Active State for Buttons */
+        .btn.active {
+            background-color: var(--dark-brown);
+            color: white;
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <div class="flex items-center space-x-2">
-                    <div class="bg-blue-600 p-2 rounded">
-                        <i class="fas fa-tshirt text-white text-xl"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold text-blue-900">Lukundo Uniforms</h1>
-                        <p class="text-xs text-gray-600">Embroidery & School Attire Specialists</p>
-                    </div>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-blue-900 font-medium">Home</a>
-                    <a href="#schools" class="nav-link text-blue-900 font-medium">Schools</a>
-                    <a href="#curtains" class="nav-link text-blue-900 font-medium">Curtains</a>
-                    <a href="#about" class="nav-link text-blue-900 font-medium">About</a>
-                    <a href="#contact" class="nav-link text-blue-900 font-medium">Contact</a>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="md:hidden text-blue-900">
-                    <i class="fas fa-bars text-xl"></i>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-shopping-basket"></i>
+                NairobiMarket
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search products, sellers, or categories...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="btn btn-primary" id="browseProductsBtn">
+                    <i class="fas fa-th-list"></i> Browse Products
+                </button>
+                <button class="btn btn-outline" id="postProductBtn">
+                    <i class="fas fa-plus-circle"></i> Post Product
+                </button>
+                <button class="btn btn-account" id="accountBtn">
+                    <i class="fas fa-user-circle"></i> Account
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
-                <div class="flex flex-col space-y-3">
-                    <a href="#home" class="text-blue-900 font-medium py-2 border-b">Home</a>
-                    <a href="#schools" class="text-blue-900 font-medium py-2 border-b">Schools</a>
-                    <a href="#curtains" class="text-blue-900 font-medium py-2 border-b">Curtains</a>
-                    <a href="#about" class="text-blue-900 font-medium py-2 border-b">About</a>
-                    <a href="#contact" class="text-blue-900 font-medium py-2 border-b">Contact</a>
-                </div>
-            </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-r from-blue-900 to-teal-800 text-white py-16 md:py-24">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Premium School Uniforms & Custom Curtains</h2>
-                    <p class="text-lg mb-6 text-blue-100">Lukundo Uniforms specializes in high-quality embroidery, durable school uniforms, and custom-made curtains for homes and institutions.</p>
-                    <div class="flex space-x-4">
-                        <a href="#schools" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg shadow-lg transition duration-300">
-                            Browse School Uniforms
-                        </a>
-                        <a href="#curtains" class="bg-white hover:bg-gray-100 text-blue-900 font-medium py-3 px-6 rounded-lg shadow-lg transition duration-300">
-                            View Curtain Collection
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="bg-white p-2 rounded-xl shadow-2xl max-w-md">
-                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Student in uniform" class="rounded-lg w-full h-auto">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- School Selection Section -->
-    <section id="schools" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Select Your School</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Choose your school from our partner institutions to view their custom-designed uniforms. Click on any school to see details and uniform options.</p>
-            </div>
+    <!-- Main Content -->
+    <main class="container main-content">
+        <!-- Products Section -->
+        <section class="products-section" id="productsSection">
+            <h2 class="page-title">
+                <i class="fas fa-store"></i> Featured Products
+            </h2>
             
-            <!-- School Selection Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
-                <!-- School selection buttons will be added by JavaScript -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here dynamically -->
             </div>
+        </section>
+        
+        <!-- Locations Section -->
+        <section class="locations-section">
+            <h3 class="locations-title">
+                <i class="fas fa-map-marker-alt"></i> Seller Locations
+            </h3>
             
-            <!-- School Details Display -->
-            <div id="school-details" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
-                <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-2" id="school-name">Select a School to View Details</h3>
-                    <p class="text-gray-600" id="school-motto">Click on any school logo above to see their uniform designs and information</p>
+            <div class="locations-tags">
+                <div class="location-tag">
+                    <i class="fas fa-map-pin"></i> Eastleigh
+                </div>
+                <div class="location-tag">
+                    <i class="fas fa-map-pin"></i> Kibera
+                </div>
+                <div class="location-tag">
+                    <i class="fas fa-map-pin"></i> Kasarani
+                </div>
+                <div class="location-tag">
+                    <i class="fas fa-map-pin"></i> City Market
+                </div>
+            </div>
+        </section>
+        
+        <!-- Account Form -->
+        <section class="forms-container" id="accountForm">
+            <h2 class="form-title">
+                <i class="fas fa-user-circle"></i> Create Account / Login
+            </h2>
+            
+            <div class="form-section active" id="loginSection">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email">
                 </div>
                 
-                <div class="flex flex-col lg:flex-row gap-8">
-                    <div class="lg:w-1/2">
-                        <div class="bg-gray-100 rounded-lg p-4 flex justify-center items-center h-80">
-                            <img id="school-uniform-image" src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="School uniform" class="max-h-full rounded-lg shadow">
-                        </div>
-                        <div class="mt-6">
-                            <h4 class="font-bold text-lg text-blue-900 mb-3">Uniform Details</h4>
-                            <ul id="uniform-details" class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>High-quality, durable fabric</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Precision embroidery with school logo</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                    <span>Comfortable fit for all-day wear</span>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password">
+                </div>
+                
+                <div class="form-buttons">
+                    <button class="btn btn-primary" id="loginBtn">Login</button>
+                    <button class="btn btn-outline" id="showRegisterBtn">Create New Account</button>
+                </div>
+            </div>
+            
+            <div class="form-section" id="registerSection">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-control" placeholder="Enter your first name">
                     </div>
                     
-                    <div class="lg:w-1/2">
-                        <div class="mb-6">
-                            <h4 class="font-bold text-lg text-blue-900 mb-3">About the School</h4>
-                            <p id="school-description" class="text-gray-700">Select a school to learn more about their history, values, and uniform requirements.</p>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-bold text-lg text-blue-900 mb-3">Uniform Specifications</h4>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="bg-blue-50 p-4 rounded-lg">
-                                    <div class="text-blue-900 font-bold text-lg mb-1" id="uniform-price">--</div>
-                                    <div class="text-gray-600 text-sm">Starting Price</div>
-                                </div>
-                                <div class="bg-blue-50 p-4 rounded-lg">
-                                    <div class="text-blue-900 font-bold text-lg mb-1" id="delivery-time">--</div>
-                                    <div class="text-gray-600 text-sm">Delivery Time</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-bold text-lg text-blue-900 mb-3">Available Uniform Items</h4>
-                            <div class="flex flex-wrap gap-2" id="uniform-items">
-                                <!-- Items will be added by JavaScript -->
-                            </div>
-                        </div>
-                        
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <h4 class="font-bold text-lg text-blue-900 mb-2">How to Order</h4>
-                            <ol class="list-decimal pl-5 space-y-1 text-gray-700">
-                                <li>Select your school from above</li>
-                                <li>Note down the items you need</li>
-                                <li>Visit our store or contact us for measurements</li>
-                                <li>We'll craft your uniform with precision embroidery</li>
-                            </ol>
-                        </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-control" placeholder="Enter your last name">
                     </div>
                 </div>
                 
-                <div class="mt-8 pt-6 border-t border-gray-200">
-                    <div class="flex flex-col sm:flex-row justify-between items-center">
-                        <div>
-                            <h4 class="font-bold text-lg text-blue-900">Need help with sizing or custom requirements?</h4>
-                            <p class="text-gray-600">Contact our uniform specialists for personalized assistance.</p>
-                        </div>
-                        <button id="contact-btn" class="mt-4 sm:mt-0 bg-blue-900 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg shadow transition duration-300">
-                            <i class="fas fa-phone-alt mr-2"></i> Contact for Measurements
-                        </button>
-                    </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email Address</label>
+                    <input type="email" id="registerEmail" class="form-control" placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" class="form-control" placeholder="Create a password">
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Your Location</label>
+                    <select id="location" class="form-control">
+                        <option value="">Select your location</option>
+                        <option value="Eastleigh">Eastleigh</option>
+                        <option value="Kibera">Kibera</option>
+                        <option value="Kasarani">Kasarani</option>
+                        <option value="City Market">City Market</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-buttons">
+                    <button class="btn btn-primary" id="registerBtn">Create Account</button>
+                    <button class="btn btn-outline" id="showLoginBtn">Already have an account?</button>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Curtains Section -->
-    <section id="curtains" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Custom Curtains & Drapery</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">We design and create beautiful, custom-made curtains for homes, offices, and institutions with precision embroidery and quality fabrics.</p>
+        </section>
+        
+        <!-- Post Product Form -->
+        <section class="forms-container" id="postProductForm">
+            <h2 class="form-title">
+                <i class="fas fa-plus-circle"></i> Post a New Product
+            </h2>
+            
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" id="productName" class="form-control" placeholder="e.g., Fresh Avocados">
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-gradient-to-br from-blue-50 to-teal-50 p-6 rounded-xl shadow-md">
-                    <div class="text-blue-900 mb-4">
-                        <i class="fas fa-ruler-combined text-3xl"></i>
-                    </div>
-                    <h4 class="font-bold text-xl text-blue-900 mb-3">Custom Measurements</h4>
-                    <p class="text-gray-700">We provide precise measurements and fittings for perfect curtain installation in any space.</p>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="productPrice">Price (Ksh)</label>
+                    <input type="number" id="productPrice" class="form-control" placeholder="e.g., 800">
                 </div>
                 
-                <div class="bg-gradient-to-br from-blue-50 to-teal-50 p-6 rounded-xl shadow-md">
-                    <div class="text-blue-900 mb-4">
-                        <i class="fas fa-palette text-3xl"></i>
-                    </div>
-                    <h4 class="font-bold text-xl text-blue-900 mb-3">Variety of Fabrics</h4>
-                    <p class="text-gray-700">Choose from a wide selection of fabrics including blackout, sheer, velvet, and embroidered options.</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-blue-50 to-teal-50 p-6 rounded-xl shadow-md">
-                    <div class="text-blue-900 mb-4">
-                        <i class="fas fa-vest text-3xl"></i>
-                    </div>
-                    <h4 class="font-bold text-xl text-blue-900 mb-3">Embroidery Services</h4>
-                    <p class="text-gray-700">Add custom embroidery to curtains for a personalized touch in homes or institutional branding.</p>
+                <div class="form-group">
+                    <label for="productCategory">Category</label>
+                    <select id="productCategory" class="form-control">
+                        <option value="">Select category</option>
+                        <option value="Fresh Produce">Fresh Produce</option>
+                        <option value="Groceries">Groceries</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Handmade Crafts">Handmade Crafts</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
             </div>
             
-            <div class="bg-gradient-to-r from-blue-900 to-teal-800 rounded-xl p-8 text-white">
-                <div class="flex flex-col lg:flex-row items-center">
-                    <div class="lg:w-2/3 mb-8 lg:mb-0">
-                        <h3 class="text-2xl font-bold mb-4">Request a Free Curtain Consultation</h3>
-                        <p>Our design experts will visit your space, take measurements, and provide fabric samples and pricing.</p>
-                    </div>
-                    <div class="lg:w-1/3 text-center lg:text-right">
-                        <button id="curtain-consultation-btn" class="bg-white hover:bg-gray-100 text-blue-900 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300">
-                            Book Consultation
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">About Lukundo Uniforms</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">With over 15 years of experience in embroidery and uniform manufacturing, we pride ourselves on quality craftsmanship and attention to detail.</p>
+            <div class="form-group">
+                <label for="productDescription">Description</label>
+                <textarea id="productDescription" class="form-control" rows="4" placeholder="Describe your product..."></textarea>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Our Commitment to Quality</h3>
-                    <p class="text-gray-700 mb-4">Lukundo Uniforms has been a trusted provider of school uniforms and custom curtains since 2008. We specialize in precision embroidery that lasts, using only the highest quality fabrics and threads.</p>
-                    <p class="text-gray-700 mb-6">We partner with schools across the region to provide uniforms that students are proud to wear, and we help homes and institutions create beautiful spaces with our custom curtain solutions.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-2 rounded mr-3">
-                                <i class="fas fa-award text-blue-900"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-blue-900">Quality Assurance</h4>
-                                <p class="text-gray-600 text-sm">Every uniform and curtain undergoes strict quality checks before delivery.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-2 rounded mr-3">
-                                <i class="fas fa-truck text-blue-900"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-blue-900">Timely Delivery</h4>
-                                <p class="text-gray-600 text-sm">We ensure on-time delivery for schools at the beginning of each term.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-2 rounded mr-3">
-                                <i class="fas fa-users text-blue-900"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-blue-900">Bulk Orders</h4>
-                                <p class="text-gray-600 text-sm">Special pricing and arrangements for schools and institutions with bulk orders.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Embroidery work" class="rounded-lg w-full mb-6">
-                    <div class="text-center">
-                        <h4 class="font-bold text-xl text-blue-900 mb-2">Visit Our Workshop</h4>
-                        <p class="text-gray-600 mb-4">See our embroidery machines in action and view fabric samples at our location.</p>
-                        <div class="flex justify-center space-x-4">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-blue-900">15+</div>
-                                <div class="text-gray-600 text-sm">Years Experience</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-blue-900">50+</div>
-                                <div class="text-gray-600 text-sm">Partner Schools</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-blue-900">1000+</div>
-                                <div class="text-gray-600 text-sm">Happy Customers</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Contact Us</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Get in touch with us for uniform orders, curtain consultations, or any inquiries.</p>
+            <div class="form-group">
+                <label for="productImage">Product Image URL</label>
+                <input type="text" id="productImage" class="form-control" placeholder="Paste image URL (or leave blank for default)">
+                <small style="color: var(--text-light);">You can get free images from Unsplash.com</small>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-blue-50 p-6 rounded-xl text-center">
-                    <div class="bg-blue-900 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h4 class="font-bold text-lg text-blue-900 mb-2">Our Location</h4>
-                    <p class="text-gray-700">123 Uniform Street<br>Embroidery District<br>Nairobi, Kenya</p>
-                </div>
-                
-                <div class="bg-blue-50 p-6 rounded-xl text-center">
-                    <div class="bg-blue-900 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h4 class="font-bold text-lg text-blue-900 mb-2">Phone Numbers</h4>
-                    <p class="text-gray-700">+254 700 123 456<br>+254 711 987 654</p>
-                    <p class="text-sm text-gray-600 mt-2">Mon-Fri: 8am-6pm, Sat: 9am-4pm</p>
-                </div>
-                
-                <div class="bg-blue-50 p-6 rounded-xl text-center">
-                    <div class="bg-blue-900 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h4 class="font-bold text-lg text-blue-900 mb-2">Email Address</h4>
-                    <p class="text-gray-700">orders@lukundouniforms.co.ke<br>info@lukundouniforms.co.ke</p>
-                </div>
+            <div class="form-buttons">
+                <button class="btn btn-primary" id="submitProductBtn">Post Product</button>
+                <button class="btn btn-outline" id="cancelProductBtn">Cancel</button>
             </div>
-            
-            <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-xl shadow-md">
-                <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Send Us a Message</h3>
-                <form id="contact-form">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="name">Full Name</label>
-                            <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" required>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" required>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label class="block text-gray-700 mb-2" for="email">Email Address</label>
-                        <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" required>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label class="block text-gray-700 mb-2" for="message">Your Message</label>
-                        <textarea id="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" required></textarea>
-                    </div>
-                    
-                    <div class="text-center">
-                        <button type="submit" class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-blue-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="bg-white p-2 rounded">
-                            <i class="fas fa-tshirt text-blue-900 text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold">Lukundo Uniforms</h3>
-                        </div>
-                    </div>
-                    <p class="text-blue-200">Specialists in embroidery, school uniforms, and custom curtains since 2008.</p>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-blue-200 hover:text-white transition">Home</a></li>
-                        <li><a href="#schools" class="text-blue-200 hover:text-white transition">School Uniforms</a></li>
-                        <li><a href="#curtains" class="text-blue-200 hover:text-white transition">Curtains</a></li>
-                        <li><a href="#about" class="text-blue-200 hover:text-white transition">About Us</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Our Services</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>School Uniforms</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Embroidery Services</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Custom Curtains</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-green-400 mr-2"></i>
-                            <span>Bulk Orders</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
-                    <div class="flex space-x-4 mb-6">
-                        <a href="#" class="bg-blue-800 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="bg-blue-800 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="bg-blue-800 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="bg-blue-800 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                    <p class="text-blue-200 text-sm">© 2023 Lukundo Uniforms. All rights reserved.</p>
-                </div>
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>NairobiMarket</h3>
+                <p>Your local Kenyan online marketplace for fresh produce, groceries, handmade crafts, and traditional clothing.</p>
             </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#" id="footerBrowse">Browse Products</a></li>
+                    <li><a href="#" id="footerSell">Sell on NairobiMarket</a></li>
+                    <li><a href="#" id="footerAccount">My Account</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> support@nairobi-market.co.ke</li>
+                    <li><i class="fas fa-phone"></i> +254 700 123 456</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container copyright">
+            <p>&copy; 2023 NairobiMarket. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // School data - in a real app, this would come from a database
-        const schools = [
+        // Sample product data
+        const products = [
             {
-                id: "lukenya",
-                name: "Lukenya School",
-                shortName: "Lukenya",
-                imageName: "lukenya.png",
-                motto: "Striving for Excellence in Education",
-                description: "Lukenya School is a premier educational institution known for its holistic approach to learning. Established in 1995, the school emphasizes academic excellence, character development, and extracurricular achievement. The school's uniform reflects its values of discipline and pride.",
-                uniformPrice: "KES 4,500",
-                deliveryTime: "5-7 days",
-                uniformItems: ["Blazer", "Shirt/Blouse", "Trousers/Skirt", "Sweater", "Tie", "PE Kit", "Socks"],
-                colors: ["Navy Blue", "White", "Maroon"]
+                id: 1,
+                name: "Avocados",
+                price: 250,
+                rating: 4.8,
+                seller: "Mama Kioni",
+                category: "Fresh Produce",
+                image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
             },
             {
-                id: "olive",
-                name: "Olive School",
-                shortName: "Olive",
-                imageName: "olive.png",
-                motto: "Nurturing Minds, Shaping Futures",
-                description: "Olive School provides a nurturing environment that fosters intellectual curiosity and personal growth. With a focus on innovation and creativity, the school prepares students for future challenges while maintaining strong traditional values.",
-                uniformPrice: "KES 3,800",
-                deliveryTime: "4-6 days",
-                uniformItems: ["Shirt/Blouse", "Trousers/Skirt", "Cardigan", "Tie", "PE Kit", "Belt", "Hat"],
-                colors: ["Green", "White", "Grey"]
+                id: 2,
+                name: "Fresh Avocados",
+                price: 800,
+                rating: 4.9,
+                seller: "Jane Crafts",
+                category: "Fresh Produce",
+                image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
             },
             {
-                id: "pcea",
-                name: "PCEA School",
-                shortName: "PCEA",
-                imageName: "pcea.png",
-                motto: "Education with a Spiritual Foundation",
-                description: "PCEA School integrates academic excellence with Christian values. The institution is known for its strong discipline, moral upbringing, and commitment to community service. The uniform symbolizes the school's unity and purpose.",
-                uniformPrice: "KES 4,200",
-                deliveryTime: "6-8 days",
-                uniformItems: ["Blazer", "Shirt/Blouse", "Skirt/Trousers", "V-neck Sweater", "Tie", "PE Kit", "Scarf"],
-                colors: ["Blue", "White", "Yellow"]
+                id: 3,
+                name: "Handmade Beads",
+                price: 100,
+                rating: 4.7,
+                seller: "Jane Crafts",
+                category: "Clothing",
+                image: "https://images.unsplash.com/photo-1590649887895-9d6d8d4cdf5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
             },
             {
-                id: "stmonica",
-                name: "St. Monica School",
-                shortName: "St. Monica",
-                imageName: "stmonica.png",
-                motto: "Virtue and Knowledge",
-                description: "St. Monica School is a faith-based institution dedicated to empowering young women through education. With a legacy spanning decades, the school emphasizes leadership, service, and academic achievement in a supportive environment.",
-                uniformPrice: "KES 4,000",
-                deliveryTime: "5-7 days",
-                uniformItems: ["Blouse", "Skirt", "Blazer", "Cardigan", "Tie", "PE Kit", "Socks"],
-                colors: ["Maroon", "White", "Grey"]
+                id: 4,
+                name: "Maize Flour (2kg)",
+                price: 1200,
+                rating: 4.7,
+                seller: "Mwangi Foods",
+                category: "Groceries",
+                image: "https://images.unsplash.com/photo-1592920608200-4c29f09978c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
             },
             {
-                id: "success",
-                name: "Success Academy",
-                shortName: "Success",
-                imageName: "success.png",
-                motto: "Achieving Excellence Together",
-                description: "Success Academy adopts modern educational approaches while maintaining high standards of discipline. The school's curriculum is designed to develop critical thinking, creativity, and problem-solving skills in students.",
-                uniformPrice: "KES 3,500",
-                deliveryTime: "3-5 days",
-                uniformItems: ["Polo Shirt", "Trousers/Shorts", "Sweatshirt", "PE Kit", "Cap", "Socks"],
-                colors: ["Royal Blue", "White", "Navy"]
-            },
-            {
-                id: "thorngrove",
-                name: "Thorngrove School",
-                shortName: "Thorngrove",
-                imageName: "thorngrove.png",
-                motto: "Building Character, Inspiring Minds",
-                description: "Thorngrove School offers a balanced education that develops both intellectual and personal qualities. With excellent facilities and dedicated staff, the school creates an environment where every student can thrive and reach their potential.",
-                uniformPrice: "KES 4,800",
-                deliveryTime: "7-10 days",
-                uniformItems: ["Blazer", "Shirt/Blouse", "Trousers/Skirt", "V-neck Sweater", "Tie", "PE Kit", "Bowler Hat"],
-                colors: ["Burgundy", "White", "Grey"]
+                id: 5,
+                name: "Traditional Kikoi",
+                price: 1500,
+                rating: 4.6,
+                seller: "Coastal Textiles",
+                category: "Clothing",
+                image: "https://images.unsplash.com/photo-1558769132-cb1c458e4222?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
             }
         ];
 
         // DOM Elements
-        const schoolButtonsContainer = document.querySelector('#schools .grid');
-        const schoolNameElement = document.getElementById('school-name');
-        const schoolMottoElement = document.getElementById('school-motto');
-        const schoolUniformImage = document.getElementById('school-uniform-image');
-        const schoolDescriptionElement = document.getElementById('school-description');
-        const uniformPriceElement = document.getElementById('uniform-price');
-        const deliveryTimeElement = document.getElementById('delivery-time');
-        const uniformItemsElement = document.getElementById('uniform-items');
-        const uniformDetailsElement = document.getElementById('uniform-details');
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const contactBtn = document.getElementById('contact-btn');
-        const curtainConsultationBtn = document.getElementById('curtain-consultation-btn');
-        const contactForm = document.getElementById('contact-form');
-
-        // Initialize school selection buttons
-        function initializeSchoolButtons() {
-            schools.forEach(school => {
-                const button = document.createElement('button');
-                button.className = 'school-card bg-white p-4 rounded-lg border-2 border-gray-200 hover:border-blue-500 flex flex-col items-center justify-center h-32';
-                button.innerHTML = `
-                    <div class="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mb-2">
-                        <i class="fas fa-school text-blue-900 text-2xl"></i>
+        const productsGrid = document.getElementById('productsGrid');
+        const accountForm = document.getElementById('accountForm');
+        const postProductForm = document.getElementById('postProductForm');
+        const productsSection = document.getElementById('productsSection');
+        
+        // Buttons
+        const browseProductsBtn = document.getElementById('browseProductsBtn');
+        const postProductBtn = document.getElementById('postProductBtn');
+        const accountBtn = document.getElementById('accountBtn');
+        const submitProductBtn = document.getElementById('submitProductBtn');
+        const cancelProductBtn = document.getElementById('cancelProductBtn');
+        const loginBtn = document.getElementById('loginBtn');
+        const registerBtn = document.getElementById('registerBtn');
+        const showRegisterBtn = document.getElementById('showRegisterBtn');
+        const showLoginBtn = document.getElementById('showLoginBtn');
+        
+        // Form sections
+        const loginSection = document.getElementById('loginSection');
+        const registerSection = document.getElementById('registerSection');
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            
+            // Set active button
+            browseProductsBtn.classList.add('active');
+            
+            // Add footer event listeners
+            document.getElementById('footerBrowse').addEventListener('click', function(e) {
+                e.preventDefault();
+                showProductsSection();
+            });
+            
+            document.getElementById('footerSell').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPostProductForm();
+            });
+            
+            document.getElementById('footerAccount').addEventListener('click', function(e) {
+                e.preventDefault();
+                showAccountForm();
+            });
+        });
+        
+        // Render products to the grid
+        function renderProducts() {
+            productsGrid.innerHTML = '';
+            
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                // Generate star rating HTML
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= Math.floor(product.rating)) {
+                        starsHtml += '<i class="fas fa-star"></i>';
+                    } else if (i === Math.ceil(product.rating) && !Number.isInteger(product.rating)) {
+                        starsHtml += '<i class="fas fa-star-half-alt"></i>';
+                    } else {
+                        starsHtml += '<i class="far fa-star"></i>';
+                    }
+                }
+                
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
                     </div>
-                    <span class="font-medium text-blue-900">${school.shortName}</span>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-price">Ksh ${product.price.toLocaleString()}</div>
+                        <div class="seller-rating">
+                            <div class="seller-name">${product.seller}</div>
+                            <div class="rating">
+                                <div class="stars">${starsHtml}</div>
+                                <span class="rating-value">${product.rating}</span>
+                            </div>
+                        </div>
+                        <div class="category-tag">${product.category}</div>
+                    </div>
                 `;
                 
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    document.querySelectorAll('.school-card').forEach(btn => {
-                        btn.classList.remove('active-school');
-                    });
-                    
-                    // Add active class to clicked button
-                    button.classList.add('active-school');
-                    
-                    // Update school details
-                    displaySchoolDetails(school);
-                });
-                
-                schoolButtonsContainer.appendChild(button);
+                productsGrid.appendChild(productCard);
             });
-            
-            // Select first school by default
-            if (schools.length > 0) {
-                const firstButton = schoolButtonsContainer.querySelector('.school-card');
-                firstButton.classList.add('active-school');
-                displaySchoolDetails(schools[0]);
-            }
         }
-
-        // Display school details
-        function displaySchoolDetails(school) {
-            schoolNameElement.textContent = `${school.name} Uniforms`;
-            schoolMottoElement.textContent = school.motto;
+        
+        // Show products section
+        function showProductsSection() {
+            productsSection.style.display = 'block';
+            accountForm.style.display = 'none';
+            postProductForm.style.display = 'none';
             
-            // In a real application, you would use the actual image path
-            // For this example, we'll use a placeholder with the school name
-            schoolUniformImage.alt = `${school.name} uniform`;
-            schoolUniformImage.src = `https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&text=${encodeURIComponent(school.name)}`;
-            
-            schoolDescriptionElement.textContent = school.description;
-            uniformPriceElement.textContent = school.uniformPrice;
-            deliveryTimeElement.textContent = school.deliveryTime;
-            
-            // Update uniform items
-            uniformItemsElement.innerHTML = '';
-            school.uniformItems.forEach(item => {
-                const itemElement = document.createElement('span');
-                itemElement.className = 'bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm';
-                itemElement.textContent = item;
-                uniformItemsElement.appendChild(itemElement);
-            });
-            
-            // Update uniform details with school colors
-            uniformDetailsElement.innerHTML = `
-                <li class="flex items-start">
-                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                    <span>High-quality, durable fabric</span>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                    <span>Precision embroidery with ${school.shortName} logo</span>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                    <span>Comfortable fit for all-day wear</span>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-palette text-blue-500 mt-1 mr-2"></i>
-                    <span>School colors: ${school.colors.join(', ')}</span>
-                </li>
-            `;
+            // Update active button
+            browseProductsBtn.classList.add('active');
+            postProductBtn.classList.remove('active');
+            accountBtn.classList.remove('active');
         }
-
-        // Mobile menu toggle
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Contact button functionality
-        contactBtn.addEventListener('click', () => {
-            const selectedSchool = document.getElementById('school-name').textContent;
-            document.getElementById('message').value = `I'm interested in uniforms for ${selectedSchool}. Please contact me for measurements and pricing.`;
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Curtain consultation button
-        curtainConsultationBtn.addEventListener('click', () => {
-            document.getElementById('message').value = "I'm interested in a curtain consultation. Please contact me to schedule an appointment.";
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Form submission
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        
+        // Show account form
+        function showAccountForm() {
+            productsSection.style.display = 'block';
+            accountForm.style.display = 'block';
+            postProductForm.style.display = 'none';
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            // Update active button
+            browseProductsBtn.classList.remove('active');
+            postProductBtn.classList.remove('active');
+            accountBtn.classList.add('active');
             
-            // In a real app, you would send this data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been received. We will contact you at ${phone} or ${email} within 24 hours.`);
+            // Show login section by default
+            loginSection.classList.add('active');
+            registerSection.classList.remove('active');
+        }
+        
+        // Show post product form
+        function showPostProductForm() {
+            productsSection.style.display = 'block';
+            accountForm.style.display = 'none';
+            postProductForm.style.display = 'block';
+            
+            // Update active button
+            browseProductsBtn.classList.remove('active');
+            postProductBtn.classList.add('active');
+            accountBtn.classList.remove('active');
+        }
+        
+        // Event Listeners
+        browseProductsBtn.addEventListener('click', showProductsSection);
+        
+        postProductBtn.addEventListener('click', function() {
+            showPostProductForm();
+        });
+        
+        accountBtn.addEventListener('click', function() {
+            showAccountForm();
+        });
+        
+        cancelProductBtn.addEventListener('click', function() {
+            showProductsSection();
             
             // Reset form
-            contactForm.reset();
+            document.getElementById('productName').value = '';
+            document.getElementById('productPrice').value = '';
+            document.getElementById('productCategory').value = '';
+            document.getElementById('productDescription').value = '';
+            document.getElementById('productImage').value = '';
         });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeSchoolButtons();
+        
+        submitProductBtn.addEventListener('click', function() {
+            const productName = document.getElementById('productName').value.trim();
+            const productPrice = document.getElementById('productPrice').value.trim();
+            const productCategory = document.getElementById('productCategory').value;
+            const productDescription = document.getElementById('productDescription').value.trim();
+            const productImage = document.getElementById('productImage').value.trim();
             
-            // Update year in footer
-            const yearElement = document.querySelector('footer p:last-child');
-            if (yearElement) {
-                yearElement.textContent = yearElement.textContent.replace('2023', new Date().getFullYear());
+            // Basic validation
+            if (!productName || !productPrice || !productCategory) {
+                alert('Please fill in all required fields: Name, Price, and Category.');
+                return;
             }
+            
+            // Create new product object
+            const newProduct = {
+                id: products.length + 1,
+                name: productName,
+                price: parseInt(productPrice),
+                rating: 4.5, // Default rating for new products
+                seller: "My Store", // Would be current user in real app
+                category: productCategory,
+                image: productImage || "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+            };
+            
+            // Add to products array
+            products.push(newProduct);
+            
+            // Re-render products
+            renderProducts();
+            
+            // Show success message
+            alert('Product posted successfully!');
+            
+            // Reset form and show products
+            showProductsSection();
+            document.getElementById('productName').value = '';
+            document.getElementById('productPrice').value = '';
+            document.getElementById('productCategory').value = '';
+            document.getElementById('productDescription').value = '';
+            document.getElementById('productImage').value = '';
+        });
+        
+        // Account form switching
+        showRegisterBtn.addEventListener('click', function() {
+            loginSection.classList.remove('active');
+            registerSection.classList.add('active');
+        });
+        
+        showLoginBtn.addEventListener('click', function() {
+            registerSection.classList.remove('active');
+            loginSection.classList.add('active');
+        });
+        
+        // Login functionality
+        loginBtn.addEventListener('click', function() {
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
+            
+            if (!email || !password) {
+                alert('Please enter both email and password.');
+                return;
+            }
+            
+            // In a real app, this would make an API call
+            alert('Login functionality would connect to backend in a real application.');
+            
+            // For demo purposes, just show products
+            showProductsSection();
+        });
+        
+        // Register functionality
+        registerBtn.addEventListener('click', function() {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('registerEmail').value.trim();
+            const password = document.getElementById('registerPassword').value.trim();
+            const location = document.getElementById('location').value;
+            
+            if (!firstName || !lastName || !email || !password || !location) {
+                alert('Please fill in all registration fields.');
+                return;
+            }
+            
+            // In a real app, this would make an API call
+            alert('Account created successfully! You can now post products.');
+            
+            // For demo purposes, just show products
+            showProductsSection();
+        });
+        
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            
+            if (searchTerm === '') {
+                renderProducts();
+                return;
+            }
+            
+            const filteredProducts = products.filter(product => 
+                product.name.toLowerCase().includes(searchTerm) ||
+                product.seller.toLowerCase().includes(searchTerm) ||
+                product.category.toLowerCase().includes(searchTerm)
+            );
+            
+            // Temporarily render filtered products
+            productsGrid.innerHTML = '';
+            
+            if (filteredProducts.length === 0) {
+                productsGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-light);">
+                        <i class="fas fa-search" style="font-size: 48px; margin-bottom: 20px;"></i>
+                        <h3>No products found for "${searchTerm}"</h3>
+                        <p>Try a different search term</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                // Generate star rating HTML
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= Math.floor(product.rating)) {
+                        starsHtml += '<i class="fas fa-star"></i>';
+                    } else if (i === Math.ceil(product.rating) && !Number.isInteger(product.rating)) {
+                        starsHtml += '<i class="fas fa-star-half-alt"></i>';
+                    } else {
+                        starsHtml += '<i class="far fa-star"></i>';
+                    }
+                }
+                
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-price">Ksh ${product.price.toLocaleString()}</div>
+                        <div class="seller-rating">
+                            <div class="seller-name">${product.seller}</div>
+                            <div class="rating">
+                                <div class="stars">${starsHtml}</div>
+                                <span class="rating-value">${product.rating}</span>
+                            </div>
+                        </div>
+                        <div class="category-tag">${product.category}</div>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productCard);
+            });
         });
     </script>
 </body>
